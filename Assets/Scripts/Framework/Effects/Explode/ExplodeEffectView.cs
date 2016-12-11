@@ -32,7 +32,7 @@ namespace PachowStudios.Framework.Effects
       var particle = new ParticleSystem.Particle()
       {
         startSize = 1f / sprite.pixelsPerUnit,
-        lifetime = Config.ParticleLifetime,
+        remainingLifetime = Config.ParticleLifetime,
         startLifetime = Config.ParticleLifetime
       };
       var positionOffset = new Vector2(

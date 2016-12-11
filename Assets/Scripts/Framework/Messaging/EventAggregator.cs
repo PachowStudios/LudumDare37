@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Linq.Extensions;
 using JetBrains.Annotations;
-using Zenject;
 
 namespace PachowStudios.Framework.Messaging
 {
@@ -12,7 +11,6 @@ namespace PachowStudios.Framework.Messaging
     private EventAggregator ParentContext { get; }
     private List<IEventAggregator> ChildContexts { get; } = new List<IEventAggregator>();
 
-    [Inject]
     public EventAggregator() { }
 
     private EventAggregator(EventAggregator parentContext)

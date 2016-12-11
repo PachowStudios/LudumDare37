@@ -2,19 +2,19 @@
 
 namespace PachowStudios.Framework.Movement
 {
-  public partial class MovementController2D
+  public abstract partial class MovementController2D : MonoBehaviour, IRaycastSource
   {
-    private class Origin
+    protected class Origin
     {
       public Vector2 TopLeft { get; }
       public Vector2 BottomRight { get; }
       public Vector2 BottomLeft { get; }
 
-      public Origin(Vector2 topLeft, Vector2 bottomRight, Vector2 bottomLeft)
+      public Origin(Bounds bounds)
       {
-        TopLeft = topLeft;
-        BottomRight = bottomRight;
-        BottomLeft = bottomLeft;
+        TopLeft = new Vector2(bounds.min.x, bounds.max.y);
+        BottomRight = new Vector2(bounds.max.x, bounds.min.y);
+        BottomLeft = bounds.min;
       }
     }
   }

@@ -123,7 +123,7 @@ namespace UnityEngine
     {
       particleSystem.transform.parent = null;
       particleSystem.SetEmissionEnabled(false);
-      particleSystem.gameObject.DestroyAfter(particleSystem.startLifetime);
+      particleSystem.gameObject.DestroyAfter(particleSystem.main.startLifetime.constantMax);
     }
 
     public static void SetEmissionEnabled([NotNull] this ParticleSystem particleSystem, bool enabled)

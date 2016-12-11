@@ -3,7 +3,7 @@ using PachowStudios.Framework.Attributes;
 using UnityEditor;
 using UnityEngine;
 
-namespace PachowStudios.Framework.Editor
+namespace PachowStudios.Framework.Editor.PropertyDrawers
 {
   [CustomPropertyDrawer(typeof(BitMaskAttribute))]
   public class BitMaskPropertyDrawer : PropertyDrawer
