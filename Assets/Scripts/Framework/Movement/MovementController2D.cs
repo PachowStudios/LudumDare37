@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 
 namespace PachowStudios.Framework.Movement
 {
-  public partial class MovementController2D
+  public partial class MovementController2D : IMovementController2D
   {
     public event Action<RaycastHit2D> Collided;
     public event Action<RaycastHit2D> Triggered;

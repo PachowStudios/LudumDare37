@@ -1,5 +1,6 @@
 ﻿using System;
 using PachowStudios.Framework;
+using PachowStudios.LudumDare37.Guns;
 
 namespace PachowStudios.LudumDare37.Player
 {
@@ -10,6 +11,7 @@ namespace PachowStudios.LudumDare37.Player
     {
       public PlayerComponents Components;
       public PlayerMoveHandler.Settings MoveHandler;
+      public PlayerGunSelector.Settings GunSelector;
     }
   }
 }

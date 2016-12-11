@@ -1,4 +1,5 @@
 ﻿using PachowStudios.Framework.Messaging;
+using PachowStudios.LudumDare37.Guns;
 using UnityEngine;
 using Zenject;
 
@@ -12,8 +13,7 @@ namespace PachowStudios.LudumDare37.Player
     private IEventAggregator EventAggregator { get; set; }
 
     [Inject]
-    public void Construct(IEventAggregator eventAggregator)
-      => EventAggregator = eventAggregator;
+    public void Construct(IEventAggregator eventAggregator) => EventAggregator = eventAggregator;
 
     public override void InstallBindings()
     {
@@ -24,6 +24,12 @@ namespace PachowStudios.LudumDare37.Player
 
       Container.BindAllInterfaces<PlayerMoveHandler>().To<PlayerMoveHandler>().AsSingle();
       Container.BindInstance(this.config.MoveHandler).WhenInjectedInto<PlayerMoveHandler>();
+
+      Container.BindAllInterfaces<PlayerRotationHandler>().To<PlayerRotationHandler>().AsSingle();
+      Container.BindAllInterfaces<PlayerShootHandler>().To<PlayerShootHandler>().AsSingle();
+
+      Container.BindAllInterfaces<PlayerGunSelector>().To<PlayerGunSelector>().AsSingle();
+      Container.BindInstance(this.config.GunSelector).WhenInjectedInto<PlayerGunSelector>();
 
       Container.BindAllInterfaces<EventAggregator>().FromMethod(c => EventAggregator.CreateChildContext()).AsSingle();
     }

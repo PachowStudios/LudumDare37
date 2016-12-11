@@ -9,7 +9,8 @@ namespace PachowStudios.LudumDare37.Player
   public class PlayerComponents
   {
     public Transform Body;
-    public TopDownMovementController2D MovementController;
+    public Transform GunPoint;
+    public MovementController2D MovementController;
     public Animator Animator;
   }
 }

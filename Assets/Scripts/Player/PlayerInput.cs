@@ -8,8 +8,9 @@ namespace PachowStudios.LudumDare37.Player
     private static KeyBindingSource CancelSetBindingKey { get; } = new KeyBindingSource(Key.Escape);
 
     public Vector2 Movement => Move.Value;
-    public bool IsWalking => Move.IsPressed;
     public Vector2 AimTarget => Input.mousePosition;
+    public bool IsWalking => Move.IsPressed;
+    public bool IsShooting => Shoot.IsPressed;
 
     private PlayerTwoAxisAction Move { get; }
     private PlayerAction Shoot { get; }
